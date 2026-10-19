@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #ededed;
+    background: #081b29;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgba(8, 27, 41, 0.75);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    gap: 40px;
+    height: 100vh;
+    background-image: linear-gradient(rgba(8, 27, 41, 0.7), rgba(8, 27, 41, 0.7)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 120px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+    flex: 1;
+}
+
+.home-image-wrap {
+    flex: 0 0 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.home-image {
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid rgba(14, 239, 255, 0.7);
+    box-shadow: 0 0 30px rgba(14, 239, 255, 0.25);
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3 span {
+    color: rgb(0, 238, 255);
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+
+
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(0, 255, 76);
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 25px cyan, 0 0 50px cyan,
+        0 0 100px cyan, 0 0 200px cyan
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.section-heading span {
+    color: #0ef;
+}
+
+.about,
+.skills,
+.services,
+.portfolio,
+.contact {
+    padding: 120px 10% 80px;
+    background: rgba(8, 27, 41, 0.9);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #d7e9f7;
+    margin-bottom: 20px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(14, 239, 255, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(14, 239, 255, 0.08);
+}
+
+.about-card h4 {
+    font-size: 26px;
+    color: #0ef;
+    margin-bottom: 20px;
+}
+
+.about-card ul {
+    list-style: none;
+    display: grid;
+    gap: 18px;
+}
+
+.about-card li {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #d7e9f7;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+}
+
+.about-card span {
+    color: #c3d4e7;
+}
+
+.skills-grid,
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill-card,
+.portfolio-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(14, 239, 255, 0.15);
+    border-radius: 20px;
+    padding: 28px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover,
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(14, 239, 255, 0.7);
+    box-shadow: 0 0 25px rgba(14, 239, 255, 0.15);
+}
+
+.skill-card h3,
+.portfolio-card h3 {
+    font-size: 24px;
+    color: #0ef;
+    margin-bottom: 12px;
+}
+
+.skill-card p,
+.portfolio-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d7e9f7;
+}
+
+.contact-box {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(14, 239, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(14, 239, 255, 0.7);
+    box-shadow: 0 0 25px rgba(14, 239, 255, 0.18);
+}
+
+.contact-item i {
+    font-size: 36px;
+    color: #0ef;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.1);
+    color: #7af7ff;
+}
+
+.contact-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-item p {
+    color: #d7e9f7;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.contact-item a {
+    color: #b7c9d8;
+    text-decoration: none;
+}
+
+.contact-item {
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-image-wrap {
+        flex-basis: auto;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .home-content h1 {
+        font-size: 42px;
+    }
+
+    .about-content,
+    .skills-grid,
+    .portfolio-grid,
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
